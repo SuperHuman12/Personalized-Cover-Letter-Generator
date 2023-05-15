@@ -15,12 +15,12 @@ $(document).ready(function () {
         "experiences-contributions",
         "certificates-education",
         "cant-do-dont-want",
-        "cover-letter-samples",
+        "cover-letter-samples"
     ];
 
     function loadFieldsFromStorage() {
         fieldsToSave.forEach(field => {
-            chrome.storage.local.get(field, items => {
+            chrome.storage.sync.get(field, items => {
                 if (items[field]) {
                     $(`#${field}`).val(items[field]);
                 }
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     function saveFieldsToStorage() {
         fieldsToSave.forEach(field => {
-            chrome.storage.local.set({ [field]: $(`#${field}`).val() });
+            chrome.storage.sync.set({ [field]: $(`#${field}`).val() });
         });
     }
 
