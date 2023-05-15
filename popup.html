@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="popup.js"></script>
+    
+    <style>
+    div#result-code {
+        background: #1d032b;
+        color: #ebc8ffc4;
+        padding: 21px;
+        border-radius: 10px;
+        margin-bottom: 19px;
+    }
+    
+    .accordion-button:not(.collapsed) {
+    color: #9e4bce;
+    background-color: #f4ddff;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+    
+    .btn-primary:hover {
+    color: #fff;
+    background-color: #702c98;
+    border-color: #702c98;
+}
+    
+    .btn-primary {
+    color: #fff;
+    background-color: #8924c2;
+    border-color: #9717df;
+}
+    </style>
+    
+</head>
+<body>
+        <div class="container" style="min-width: 600px;padding: 42px;">
+        <img src="icons/fulllogo.png" style="width: 230px;"/>
+        <div class="accordion mb-2" id="infoAccordion">
+            <div class="accordion-item border-dark mt-5 my-4">
+                <h2 class="accordion-header" id="headingInfo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
+                        🟪  Saved Details <span class="text-muted px-3"> Repeating Information for each request </span>  
+                    </button>
+                </h2>
+                <div id="collapseInfo" class="accordion-collapse collapse" aria-labelledby="headingInfo" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                        <div class="mb-3">
+                            <label for="about-me" class="form-label  text-muted">About me</label>
+                            <textarea class="form-control" id="about-me" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experiences-contributions" class="form-label  text-muted">My experiences and contributions</label>
+                            <textarea class="form-control" id="experiences-contributions" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="certificates-education" class="form-label  text-muted">My certificates and Education</label>
+                            <textarea class="form-control" id="certificates-education" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cant-do-dont-want" class="form-label  text-muted">Mention stuff you cannot do or don't want to do</label>
+                            <textarea class="form-control" id="cant-do-dont-want" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cover-letter-samples" class="form-label  text-muted">Cover letter samples</label>
+                            <textarea class="form-control" id="cover-letter-samples" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h3 for="result" class="form-label fw-bold my-4">Job Details</h3>
+        
+        <div class="mb-3">
+            <label for="job-position" class="form-label  text-muted">Job position</label>
+            <input type="text" class="form-control" id="job-position">
+        </div>
+        <div class="mb-3">
+            <label for="company-name" class="form-label  text-muted">Company Name</label>
+            <input type="text" class="form-control" id="company-name">
+        </div>
+        <div class="mb-3">
+            <label for="job-requirements" class="form-label  text-muted">Stuff they want from you</label>
+            <input type="text" class="form-control" id="job-requirements">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary w-100" id="generate-btn">Generate Personalized Cover Letter</button>
+        </div>
+        <div class="progress mb-3" id="loading-progress" style="display:none;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Please wait...</div>
+        </div>
+        <div class="border-top fw-bold pt-3 mt-3 mb-3">
+            <div class="d-flex" style="justify-content: space-between;margin-bottom: 15px;">
+            <h3 for="result" class="form-label">Result</h3>
+            <button class="btn btn-outline-dark" id="copy-btn">Copy Result</button>
+            </div>
+            <code><div id="result-code">Cover letter will be generated here...</div></code>
+        </div>
+    </div>
+</body>
+</html>
