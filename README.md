@@ -25,7 +25,7 @@ This project is an open-source Chrome extension designed to generate personalize
 After successful installation, click on the extension icon on your Chrome toolbar. A popup will display a form where you can input your details and the job description. Based on your input, the AI will generate a personalized cover letter for you.
 
 ## Contributing
-We love contributions from the community! Please feel free to submit issues for bugs, new feature requests, or even pull requests with your own improvements. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+We love contributions from the community! Please feel free to submit issues for bugs, new feature requests, or even pull requests with your own improvements. 
 
 ## License
 This project is licensed under the terms of the MIT license. For more details, see [LICENSE](LICENSE).
